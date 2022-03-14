@@ -46,6 +46,8 @@ const app = new Vue(settings =
            }
          },
          deleteTodo(i) {
+            this.todoMsg.text = '';
+            this.todoMsg.error = false;
             this.todos.splice(i, 1);
             if (this.todos == '') {
                this.todoMsg.error = false;
