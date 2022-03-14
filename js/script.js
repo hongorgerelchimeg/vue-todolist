@@ -2,6 +2,8 @@ const app = new Vue(settings =
    {
       el: '#root',
       data: {
+         inputTodo: null,
+         
          todos: [
          {
             text: "fare i compiti",
@@ -9,7 +11,7 @@ const app = new Vue(settings =
          },
          {
             text: "scrivere codici",
-            done: false,  
+            done: true,  
          },
          {
             text: "fare i compiti",
@@ -20,7 +22,7 @@ const app = new Vue(settings =
             done: false,  
          },
          {
-            text: "scrivere codici",
+            text: "fare i compiti",
             done: false,  
          },
          
