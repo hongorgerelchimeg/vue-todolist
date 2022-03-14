@@ -14,12 +14,12 @@
     <div id="root">
         <div class="add-todo">
             <input v-model="inputTodo" type="text" name="todo-name" id="todo-name" placeholder="Nuovo Todo" size="">
-            <button class="btn-aggiungi">Aggiungi</button>
+            <button @click="aggiungiTodo" class="btn-aggiungi">Aggiungi</button>
         </div>
         <ul class="todo-list">
-            <li v-for="todo in todos " class="todo-item">
-                <div :class="todo.done == true ? 'todo-done' : ''" class="todo">{{todo.text}}</div>
-                <button class="delete-todo">x</button>
+            <li v-for="(todo, index) in todos " class="todo-item">
+                <div @click="doneTodo(index)" :class="todo.done == true ? 'todo-done' : ''" class="todo">{{todo.text}}</div>
+                <button @click="deleteTodo(index)" class="delete-todo">x</button>
             </li>
             
         </ul>
