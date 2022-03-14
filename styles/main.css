@@ -8,6 +8,16 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: #E6E1E6;
+}
+.container {
+    background-color: white;
+    border-radius: .8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+
 }
 
 #root {
@@ -19,31 +29,78 @@ body {
 }
 
 .add-todo {
-    max-width: 30vw;
+    width: 100%;
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+   
+    border-bottom: 1px solid #E6E1E6;
     
+}
+
+.add-input {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.add-message {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    font-size: .8rem;
+}
+
+.todo-holder {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
 }
 
 .todo-list {
-    background-color: #efefef;
-    margin-top: 2rem;
     list-style: none;
     width: 50vw;
-    border-radius: .8rem;
     padding: 2rem;
-    
-   
-
 }
 
 .todo-item {
+    
     width: 100%;
     line-height: 3;
     font-weight: 400;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid rgb(192, 192, 192) ;
+    border-bottom: 1px solid rgb(222, 222, 222) ;
 }
+
+.radio-btn {
+    width: 17px;
+    height: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 360%;
+    padding: 2px; 
+    cursor: pointer; 
+}
+
+.radio-btn-selected {
+    border: 1px solid #1462FF;
+}
+
+.inner-radio {
+    width: 15px;
+    height: 11px;
+    border-radius: 360%;
+}
+
+.inner-radio-selected {
+    background-color: #1462FF;
+}
+
 .todo {
     cursor: pointer;
 }
@@ -55,6 +112,9 @@ body {
     
 }
 .btn-aggiungi {
+    border: none;
+    color: white;
+    background-color: #1462FF;
     cursor: pointer;
 }
 
@@ -76,4 +136,12 @@ body {
 .delete-todo:hover {
     border: 1px solid grey;
     border-radius: 8px;
+}
+
+.error {
+    color: red;
+}
+
+.complete {
+    color: green;
 }

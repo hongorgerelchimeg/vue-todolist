@@ -12,17 +12,31 @@
 </head>
 <body>
     <div id="root">
-        <div class="add-todo">
-            <input @keyup.enter="aggiungiTodo" v-model="newTodo" type="text" name="todo-name" id="todo-name" placeholder="Nuovo Todo" size="">
-            <button @click="aggiungiTodo" class="btn-aggiungi">Aggiungi</button>
+        <div class="container">
+            <div class="add-todo">
+                <div class="add-input">
+                    <input @keyup.enter="aggiungiTodo" v-model="newTodo" type="text" name="todo-name" id="todo-name" placeholder="Nuovo Todo" size="">
+                    <button @click="aggiungiTodo" class="btn-aggiungi">Aggiungi</button>
+                </div>
+                <div class="add-message" :class="todoMsg.error == true ? 'error' : 'complete'">
+                    {{todoMsg.text}}
+                </div>
+            </div>
+            <ul class="todo-list">
+                <li v-for="(todo, index) in todos " class="todo-item">
+                    <div class="todo-holder">
+                        <div @click="doneTodo(index)" class="radio-btn" :class="todo.done == true ? 'radio-btn-selected' : ''">
+                            <div class="inner-radio" :class="todo.done == true ? 'inner-radio-selected' : ''"></div>
+                        </div>
+                    
+                        <div  :class="todo.done == true ? 'todo-done' : ''" class="todo">{{todo.text}}</div>
+                    </div>
+                    <button @click="deleteTodo(index)" class="delete-todo">x</button>
+                </li>
+                
+            </ul>
         </div>
-        <ul class="todo-list">
-            <li v-for="(todo, index) in todos " class="todo-item">
-                <div @click="doneTodo(index)" :class="todo.done == true ? 'todo-done' : ''" class="todo">{{todo.text}}</div>
-                <button @click="deleteTodo(index)" class="delete-todo">x</button>
-            </li>
-            
-        </ul>
+        
     </div>
 
 
