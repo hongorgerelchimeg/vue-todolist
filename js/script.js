@@ -2,11 +2,8 @@ const app = new Vue(settings =
    {
       el: '#root',
       data: {
-         inputTodo: "",
-         newTodo: {
-            text: "",
-            done: false,
-         },
+         // inputTodo: "",
+         newTodo: "",
 
          todos: [
          {
@@ -36,10 +33,9 @@ const app = new Vue(settings =
       },
       methods: {
          aggiungiTodo() {
-           if (this.inputTodo.trim() != "" ) {
-            this.newTodo.text = this.inputTodo.trim() ;
-            this.todos.push(this.newTodo);
-            this.inputTodo = '';
+           if (this.newTodo.trim() != "" ) {
+            this.todos.unshift({text: this.newTodo.trim(), done: false});
+            this.newTodo = '';
            }
          },
          deleteTodo(i) {

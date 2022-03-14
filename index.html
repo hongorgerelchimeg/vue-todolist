@@ -13,7 +13,7 @@
 <body>
     <div id="root">
         <div class="add-todo">
-            <input v-model="inputTodo" type="text" name="todo-name" id="todo-name" placeholder="Nuovo Todo" size="">
+            <input @keyup.enter="aggiungiTodo" v-model="newTodo" type="text" name="todo-name" id="todo-name" placeholder="Nuovo Todo" size="">
             <button @click="aggiungiTodo" class="btn-aggiungi">Aggiungi</button>
         </div>
         <ul class="todo-list">

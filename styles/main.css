@@ -24,7 +24,7 @@ body {
 }
 
 .todo-list {
-    background-color: #f4f4f4;
+    background-color: #efefef;
     margin-top: 2rem;
     list-style: none;
     width: 50vw;
@@ -53,6 +53,9 @@ body {
     border-radius: 8px;
     border: 1px solid grey;
     
+}
+.btn-aggiungi {
+    cursor: pointer;
 }
 
 .todo-done {
